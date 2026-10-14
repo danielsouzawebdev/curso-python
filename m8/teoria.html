@@ -1,0 +1,25 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M8 — Teoria</title><link rel="stylesheet" href="../assets/css/style.css"><script defer src="../assets/js/app.js"></script></head><body><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html">Py<span>thon</span></a><div class="top-actions"><a href="../glossario.html">Glossário</a><a href="../referencias.html">Referências</a><button onclick="printPage()">Imprimir/PDF</button></div></div></header><div class="module-strip"><div class="inner"><a class="" href="../m0/index.html">M0</a><a class="" href="../m1/index.html">M1</a><a class="" href="../m2/index.html">M2</a><a class="" href="../m3/index.html">M3</a><a class="" href="../m4/index.html">M4</a><a class="" href="../m5/index.html">M5</a><a class="" href="../m6/index.html">M6</a><a class="" href="../m7/index.html">M7</a><a class="active" href="../m8/index.html">M8</a><a class="" href="../m9/index.html">M9</a><a class="" href="../m10/index.html">M10</a><a class="" href="../m11/index.html">M11</a><a class="" href="../m12/index.html">M12</a></div></div><main class="container"><div class="module-tabs"><a class="" href="index.html">Visão geral</a><a class="active" href="teoria.html">Teoria</a><a class="" href="pratica.html">Prática</a><a class="" href="avaliacao.html">Avaliação</a></div><div class="breadcrumb"><a href="../index.html">Início</a> / <a href="index.html">M8</a> / Teoria</div><h1>Banco de dados com Python — Teoria</h1>
+<h2>1. SQLite</h2><p>SQLite é embutido e não exige servidor separado, ideal para aprender persistência relacional.</p>
+<pre><code>import sqlite3
+
+with sqlite3.connect(&quot;app.db&quot;) as con:
+    con.execute(&quot;&quot;&quot;
+        CREATE TABLE IF NOT EXISTS clientes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nome TEXT NOT NULL,
+            email TEXT NOT NULL UNIQUE
+        )
+    &quot;&quot;&quot;)</code></pre>
+<h2>2. INSERT parametrizado</h2><pre><code>with sqlite3.connect(&quot;app.db&quot;) as con:
+    con.execute(
+        &quot;INSERT INTO clientes (nome, email) VALUES (?, ?)&quot;,
+        (&quot;Ana&quot;, &quot;ana@exemplo.com&quot;)
+    )</code></pre>
+<h2>3. SELECT</h2><pre><code>with sqlite3.connect(&quot;app.db&quot;) as con:
+    linhas = con.execute(&quot;SELECT id, nome, email FROM clientes&quot;).fetchall()
+    for linha in linhas:
+        print(linha)</code></pre>
+<h2>4. Transações</h2><p>Operações que precisam acontecer juntas devem estar na mesma transação.</p>
+<h2>5. SQL Injection</h2><div class="callout danger">Nunca construa SQL concatenando entrada do usuário. Use placeholders.</div>
+<h2>6. MySQL como aprofundamento</h2><p>O mesmo modelo conceitual se aplica, mas exige driver e servidor. Use conexão configurável e não grave senha em repositório.</p>
+<div class="prev-next"><a href="../m7/index.html">← M7 — Ambientes, pacotes e dependências</a><a href="../m9/index.html">M9 — APIs e automação →</a></div></main><footer>Material autoinstrucional • Python • uso didático</footer></body></html>

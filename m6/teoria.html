@@ -1,0 +1,42 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M6 — Teoria</title><link rel="stylesheet" href="../assets/css/style.css"><script defer src="../assets/js/app.js"></script></head><body><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html">Py<span>thon</span></a><div class="top-actions"><a href="../glossario.html">Glossário</a><a href="../referencias.html">Referências</a><button onclick="printPage()">Imprimir/PDF</button></div></div></header><div class="module-strip"><div class="inner"><a class="" href="../m0/index.html">M0</a><a class="" href="../m1/index.html">M1</a><a class="" href="../m2/index.html">M2</a><a class="" href="../m3/index.html">M3</a><a class="" href="../m4/index.html">M4</a><a class="" href="../m5/index.html">M5</a><a class="active" href="../m6/index.html">M6</a><a class="" href="../m7/index.html">M7</a><a class="" href="../m8/index.html">M8</a><a class="" href="../m9/index.html">M9</a><a class="" href="../m10/index.html">M10</a><a class="" href="../m11/index.html">M11</a><a class="" href="../m12/index.html">M12</a></div></div><main class="container"><div class="module-tabs"><a class="" href="index.html">Visão geral</a><a class="active" href="teoria.html">Teoria</a><a class="" href="pratica.html">Prática</a><a class="" href="avaliacao.html">Avaliação</a></div><div class="breadcrumb"><a href="../index.html">Início</a> / <a href="index.html">M6</a> / Teoria</div><h1>Programação Orientada a Objetos — Teoria</h1>
+<h2>1. Classe e objeto</h2><pre><code>class Produto:
+    def __init__(self, nome: str, preco: float):
+        self.nome = nome
+        self.preco = preco
+
+    def aplicar_desconto(self, percentual: float) -&gt; None:
+        self.preco *= 1 - percentual / 100
+
+p = Produto(&quot;Teclado&quot;, 100)
+p.aplicar_desconto(10)
+print(p.preco)</code></pre>
+<h2>2. Encapsulamento e propriedades</h2><pre><code>class Conta:
+    def __init__(self, saldo: float = 0):
+        self._saldo = saldo
+
+    @property
+    def saldo(self) -&gt; float:
+        return self._saldo
+
+    def depositar(self, valor: float) -&gt; None:
+        if valor &lt;= 0:
+            raise ValueError(&quot;Valor deve ser positivo&quot;)
+        self._saldo += valor</code></pre>
+<h2>3. Herança e polimorfismo</h2><pre><code>class Funcionario:
+    def calcular_bonus(self) -&gt; float:
+        return 0
+
+class Vendedor(Funcionario):
+    def __init__(self, vendas: float):
+        self.vendas = vendas
+
+    def calcular_bonus(self) -&gt; float:
+        return self.vendas * 0.05</code></pre>
+<h2>4. Composição</h2><p>Prefira composição quando a relação é “tem um” em vez de “é um”.</p>
+<h2>5. dataclass</h2><pre><code>from dataclasses import dataclass
+
+@dataclass
+class Endereco:
+    cidade: str
+    uf: str</code></pre>
+<div class="prev-next"><a href="../m5/index.html">← M5 — Arquivos, exceções e contexto</a><a href="../m7/index.html">M7 — Ambientes, pacotes e dependências →</a></div></main><footer>Material autoinstrucional • Python • uso didático</footer></body></html>

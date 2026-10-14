@@ -1,0 +1,29 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M2 — Teoria</title><link rel="stylesheet" href="../assets/css/style.css"><script defer src="../assets/js/app.js"></script></head><body><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html">Py<span>thon</span></a><div class="top-actions"><a href="../glossario.html">Glossário</a><a href="../referencias.html">Referências</a><button onclick="printPage()">Imprimir/PDF</button></div></div></header><div class="module-strip"><div class="inner"><a class="" href="../m0/index.html">M0</a><a class="" href="../m1/index.html">M1</a><a class="active" href="../m2/index.html">M2</a><a class="" href="../m3/index.html">M3</a><a class="" href="../m4/index.html">M4</a><a class="" href="../m5/index.html">M5</a><a class="" href="../m6/index.html">M6</a><a class="" href="../m7/index.html">M7</a><a class="" href="../m8/index.html">M8</a><a class="" href="../m9/index.html">M9</a><a class="" href="../m10/index.html">M10</a><a class="" href="../m11/index.html">M11</a><a class="" href="../m12/index.html">M12</a></div></div><main class="container"><div class="module-tabs"><a class="" href="index.html">Visão geral</a><a class="active" href="teoria.html">Teoria</a><a class="" href="pratica.html">Prática</a><a class="" href="avaliacao.html">Avaliação</a></div><div class="breadcrumb"><a href="../index.html">Início</a> / <a href="index.html">M2</a> / Teoria</div><h1>Decisão e repetição — Teoria</h1>
+<h2>1. if/elif/else</h2><pre><code>nota = 78
+if nota &gt;= 90:
+    conceito = &quot;A&quot;
+elif nota &gt;= 70:
+    conceito = &quot;B&quot;
+else:
+    conceito = &quot;C&quot;
+print(conceito)</code></pre>
+<h2>2. Operadores lógicos</h2><pre><code>idade = 20
+tem_documento = True
+if idade &gt;= 18 and tem_documento:
+    print(&quot;Entrada permitida&quot;)</code></pre>
+<h2>3. match</h2><pre><code>comando = &quot;listar&quot;
+match comando:
+    case &quot;listar&quot;:
+        print(&quot;Listando...&quot;)
+    case &quot;sair&quot;:
+        print(&quot;Encerrando...&quot;)
+    case _:
+        print(&quot;Comando desconhecido&quot;)</code></pre>
+<h2>4. for e range</h2><pre><code>for numero in range(1, 6):
+    print(numero)</code></pre>
+<h2>5. while</h2><pre><code>senha = &quot;&quot;
+while senha != &quot;1234&quot;:
+    senha = input(&quot;Senha: &quot;)
+print(&quot;Acesso liberado&quot;)</code></pre>
+<h2>6. break e continue</h2><p>Use com intenção clara; laços difíceis de entender indicam que o algoritmo pode precisar ser reorganizado.</p>
+<div class="prev-next"><a href="../m1/index.html">← M1 — Fundamentos da linguagem</a><a href="../m3/index.html">M3 — Coleções e estruturas de dados →</a></div></main><footer>Material autoinstrucional • Python • uso didático</footer></body></html>

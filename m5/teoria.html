@@ -1,0 +1,29 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M5 — Teoria</title><link rel="stylesheet" href="../assets/css/style.css"><script defer src="../assets/js/app.js"></script></head><body><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html">Py<span>thon</span></a><div class="top-actions"><a href="../glossario.html">Glossário</a><a href="../referencias.html">Referências</a><button onclick="printPage()">Imprimir/PDF</button></div></div></header><div class="module-strip"><div class="inner"><a class="" href="../m0/index.html">M0</a><a class="" href="../m1/index.html">M1</a><a class="" href="../m2/index.html">M2</a><a class="" href="../m3/index.html">M3</a><a class="" href="../m4/index.html">M4</a><a class="active" href="../m5/index.html">M5</a><a class="" href="../m6/index.html">M6</a><a class="" href="../m7/index.html">M7</a><a class="" href="../m8/index.html">M8</a><a class="" href="../m9/index.html">M9</a><a class="" href="../m10/index.html">M10</a><a class="" href="../m11/index.html">M11</a><a class="" href="../m12/index.html">M12</a></div></div><main class="container"><div class="module-tabs"><a class="" href="index.html">Visão geral</a><a class="active" href="teoria.html">Teoria</a><a class="" href="pratica.html">Prática</a><a class="" href="avaliacao.html">Avaliação</a></div><div class="breadcrumb"><a href="../index.html">Início</a> / <a href="index.html">M5</a> / Teoria</div><h1>Arquivos, exceções e contexto — Teoria</h1>
+<h2>1. Pathlib</h2><pre><code>from pathlib import Path
+arquivo = Path(&quot;dados&quot;) / &quot;clientes.txt&quot;
+print(arquivo.exists())</code></pre>
+<h2>2. with</h2><pre><code>from pathlib import Path
+caminho = Path(&quot;mensagem.txt&quot;)
+with caminho.open(&quot;w&quot;, encoding=&quot;utf-8&quot;) as arq:
+    arq.write(&quot;Olá\n&quot;)</code></pre>
+<h2>3. Exceções</h2><pre><code>try:
+    idade = int(input(&quot;Idade: &quot;))
+except ValueError:
+    print(&quot;Digite um número inteiro.&quot;)
+else:
+    print(&quot;Valor válido.&quot;)
+finally:
+    print(&quot;Fim da operação.&quot;)</code></pre>
+<h2>4. JSON</h2><pre><code>import json
+
+dados = {&quot;nome&quot;: &quot;Ana&quot;, &quot;ativo&quot;: True}
+with open(&quot;dados.json&quot;, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+    json.dump(dados, f, ensure_ascii=False, indent=2)</code></pre>
+<h2>5. CSV</h2><pre><code>import csv
+
+with open(&quot;clientes.csv&quot;, &quot;w&quot;, newline=&quot;&quot;, encoding=&quot;utf-8&quot;) as f:
+    w = csv.writer(f)
+    w.writerow([&quot;nome&quot;, &quot;cidade&quot;])
+    w.writerow([&quot;Ana&quot;, &quot;Belo Horizonte&quot;])</code></pre>
+<div class="callout danger"><strong>Evite:</strong> <code>except:</code> vazio. Capture exceções específicas e trate o que realmente sabe resolver.</div>
+<div class="prev-next"><a href="../m4/index.html">← M4 — Funções e organização</a><a href="../m6/index.html">M6 — Programação Orientada a Objetos →</a></div></main><footer>Material autoinstrucional • Python • uso didático</footer></body></html>

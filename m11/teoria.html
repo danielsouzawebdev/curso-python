@@ -1,0 +1,23 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M11 — Teoria</title><link rel="stylesheet" href="../assets/css/style.css"><script defer src="../assets/js/app.js"></script></head><body><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html">Py<span>thon</span></a><div class="top-actions"><a href="../glossario.html">Glossário</a><a href="../referencias.html">Referências</a><button onclick="printPage()">Imprimir/PDF</button></div></div></header><div class="module-strip"><div class="inner"><a class="" href="../m0/index.html">M0</a><a class="" href="../m1/index.html">M1</a><a class="" href="../m2/index.html">M2</a><a class="" href="../m3/index.html">M3</a><a class="" href="../m4/index.html">M4</a><a class="" href="../m5/index.html">M5</a><a class="" href="../m6/index.html">M6</a><a class="" href="../m7/index.html">M7</a><a class="" href="../m8/index.html">M8</a><a class="" href="../m9/index.html">M9</a><a class="" href="../m10/index.html">M10</a><a class="active" href="../m11/index.html">M11</a><a class="" href="../m12/index.html">M12</a></div></div><main class="container"><div class="module-tabs"><a class="" href="index.html">Visão geral</a><a class="active" href="teoria.html">Teoria</a><a class="" href="pratica.html">Prática</a><a class="" href="avaliacao.html">Avaliação</a></div><div class="breadcrumb"><a href="../index.html">Início</a> / <a href="index.html">M11</a> / Teoria</div><h1>Testes, depuração e qualidade — Teoria</h1>
+<h2>1. Debug</h2><p>Use breakpoints, inspeção de variáveis, pilha de chamadas e execução passo a passo. <code>print()</code> ajuda, mas não substitui um depurador em problemas complexos.</p>
+<h2>2. Logging</h2><pre><code>import logging
+
+logging.basicConfig(level=logging.INFO)
+logging.info(&quot;Aplicação iniciada&quot;)
+logging.warning(&quot;Estoque baixo&quot;)</code></pre>
+<h2>3. unittest</h2><pre><code>import unittest
+
+def somar(a, b):
+    return a + b
+
+class TestSomar(unittest.TestCase):
+    def test_soma_positivos(self):
+        self.assertEqual(somar(2, 3), 5)
+
+if __name__ == &quot;__main__&quot;:
+    unittest.main()</code></pre>
+<h2>4. pytest</h2><pre><code>def test_soma_positivos():
+    assert somar(2, 3) == 5</code></pre>
+<h2>5. Formatação e lint</h2><p>Ferramentas como Ruff e Black podem automatizar parte da consistência. Elas não substituem design e legibilidade.</p>
+<h2>6. Refatoração</h2><p>Refatorar altera estrutura interna mantendo comportamento observável. Faça em passos pequenos e protegidos por testes.</p>
+<div class="prev-next"><a href="../m10/index.html">← M10 — Interfaces gráficas com Tkinter</a><a href="../m12/index.html">M12 — Projeto Integrador →</a></div></main><footer>Material autoinstrucional • Python • uso didático</footer></body></html>

@@ -1,0 +1,22 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M1 — Teoria</title><link rel="stylesheet" href="../assets/css/style.css"><script defer src="../assets/js/app.js"></script></head><body><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html">Py<span>thon</span></a><div class="top-actions"><a href="../glossario.html">Glossário</a><a href="../referencias.html">Referências</a><button onclick="printPage()">Imprimir/PDF</button></div></div></header><div class="module-strip"><div class="inner"><a class="" href="../m0/index.html">M0</a><a class="active" href="../m1/index.html">M1</a><a class="" href="../m2/index.html">M2</a><a class="" href="../m3/index.html">M3</a><a class="" href="../m4/index.html">M4</a><a class="" href="../m5/index.html">M5</a><a class="" href="../m6/index.html">M6</a><a class="" href="../m7/index.html">M7</a><a class="" href="../m8/index.html">M8</a><a class="" href="../m9/index.html">M9</a><a class="" href="../m10/index.html">M10</a><a class="" href="../m11/index.html">M11</a><a class="" href="../m12/index.html">M12</a></div></div><main class="container"><div class="module-tabs"><a class="" href="index.html">Visão geral</a><a class="active" href="teoria.html">Teoria</a><a class="" href="pratica.html">Prática</a><a class="" href="avaliacao.html">Avaliação</a></div><div class="breadcrumb"><a href="../index.html">Início</a> / <a href="index.html">M1</a> / Teoria</div><h1>Fundamentos da linguagem — Teoria</h1>
+<h2>1. Variáveis e tipos</h2><pre><code>nome = &quot;Ana&quot;
+idade = 17
+altura = 1.68
+ativo = True
+
+print(type(nome), type(idade), type(altura), type(ativo))</code></pre>
+<h2>2. Tipagem dinâmica</h2><p>Python associa tipos a objetos, não a nomes de variável de forma fixa. Isso não significa ausência de tipos.</p>
+<h2>3. Entrada</h2><pre><code>nome = input(&quot;Nome: &quot;)
+idade = int(input(&quot;Idade: &quot;))
+print(f&quot;{nome} tem {idade} anos.&quot;)</code></pre>
+<h2>4. Operadores</h2><p>Aritméticos, comparação, lógicos, identidade e pertinência.</p><pre><code>a = 10
+b = 3
+print(a + b, a - b, a * b, a / b, a // b, a % b, a ** b)
+print(a &gt; b, a == b)</code></pre>
+<h2>5. Strings</h2><p>Indexação, slicing, métodos e f-strings.</p><pre><code>texto = &quot;Programação em Python&quot;
+print(texto[0])
+print(texto[0:11])
+print(texto.lower())
+print(texto.replace(&quot;Python&quot;, &quot;C#&quot;))</code></pre>
+<div class="callout tip"><strong>Prática profissional:</strong> converta e valide entradas. <code>input()</code> sempre retorna string.</div>
+<div class="prev-next"><a href="../m0/index.html">← M0 — Ambiente e primeiros passos</a><a href="../m2/index.html">M2 — Decisão e repetição →</a></div></main><footer>Material autoinstrucional • Python • uso didático</footer></body></html>
